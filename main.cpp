@@ -5,13 +5,15 @@
 #include <time.h>
 #include "Individual.h"
 // number of genes per individual
-const int geneCount = 200;
+const int geneCount = 100;
 //ideal phenotype preferred
 std::bitset<geneCount> idealPhenotype(std::string("01010110010111001010"));
 //number of individuals present
-const int population = 10000;
+const int population = 100;
 //mutation rate 
 const int mutationRate = 100;
+//set this to less than geneCount!
+const int threshold = 95;
 int maxValue = int(pow(2, geneCount));
 int seed = int(time(NULL));
 Individual individuals[population];
@@ -145,7 +147,7 @@ int main()
 
 	double averageFitness = 0;
 	int generationCount = 0;
-	while (averageFitness < geneCount)
+	while (averageFitness < threshold)
 	{
 		generationCount++;
 		averageFitness = 0.0;
