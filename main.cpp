@@ -12,7 +12,7 @@ std::bitset<geneCount> idealPhenotype(std::string("01010110010111001010"));
 const int population = 100;
 //mutation rate 
 const int mutationRate = 100;
-//set this to less than geneCount!
+//set this to less than or equal to geneCount!
 const int threshold = 95;
 int maxValue = int(pow(2, geneCount));
 int seed = int(time(NULL));
